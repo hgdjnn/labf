@@ -6,11 +6,14 @@
     	<a href = "register.jsp">注册</a>
  	 </p>
  	 <br>
+ 	 <center> <img src="head.jpg"><br><br><br></center>
+ 	 <form name="myForm" action="Get" method="post">
+   	<h2 align="center">请输入查询信息：：
+   		
+	   	<input type = "text" name = "author" size = "45%" style=height:25px>	&nbsp;&nbsp;
+	   <input type="image" src="k.jpg" onmousemove="this.src='k.jpg'" onmouseout="this.src='k.jpg'" />
+    </h2>
  	 <br>
- 	 <br>
- 	<center> 欢迎！</center>
- 	 
-	<script align="right" charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
- 	 
+	<right><script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
   </body>
 </html>

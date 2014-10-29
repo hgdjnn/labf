@@ -1,9 +1,15 @@
 <%@ page language="java" import="java.sql.*" pageEncoding="GB18030"%>
+<html>
+<head>
 
+</head>
   
   <body>
- 
-  	 欢迎！${sessionScope.account}<br>
+ 	<font color=BLUE><strong>欢迎！${sessionScope.account}</strong></font>
+  	<br><br><br>
+  	<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
+  	<br><br>
+  	  <body background="person.jpg">
   	 <%
   	 		Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/labf?characterEncodeing=utf-8";
@@ -27,14 +33,23 @@
 				String work = rs.getString("work");
 				url1 = rs.getString("url");
 				
-				out.print("您的姓名：" + name + "<br>");
-				out.println("您的职业：" + work + "<br>");
-				out.println("您的链接：" + url1);
+				if(name!=null){
+					out.print("您的姓名：" + name + "<br>");
+				}
+				else out.print("您的姓名：暂未添加！<br>");
+				if(work!=null){
+					out.println("您的职业：" + work + "<br>");
+				}
+				else out.print("您的工作：暂未添加！<br>");
+				if(url1!=null){
+					out.println("您的链接：" + url1);
+				}
+				else{
+					url1 = "no.jsp";
+					out.println("您的链接：" + url1);
+				} 
 			}
-			if(url1.length()==0)
-			{
-				url1 = "no.jsp";
-			}
+		
   	  %>
   	  <input type="button" onclick="change()" value="查看"/>
 		 <script type = "text/javascript">
