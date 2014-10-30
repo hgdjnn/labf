@@ -9,11 +9,7 @@
 			String password = "2623628929";
 			
 			Connection con = DriverManager.getConnection(url, user, password);
-			if(con!=null){
-				out.print("hello");
-			}else{
-				out.print("no hello");
-			}
+		
 			
 			
 			
@@ -27,7 +23,9 @@
 			{
 				out.println("×¢²á³É¹¦£¡");
 				String sql1 = "INSERT INTO pet(account,password) VALUES('" + account +"','" + pass1 +"')";
+				String sql1t= "INSERT INTO tree(accountt) VALUES('"+ account +"')";
 				stat.executeUpdate(sql1);
+				stat.executeUpdate(sql1t);
 				session.setAttribute("account", account);
 				ur = "person.jsp";
 			}

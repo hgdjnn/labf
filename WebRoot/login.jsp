@@ -15,10 +15,14 @@
     		loginForm.submit();
     	}
     </script>
+    <center>
+    <body background="bg.jpg">
+    <br><br><br><br>
     <form name = "loginForm" action = "success1.jsp" method = "post">
     	«Î ‰»Î’À∫≈£∫<input name = "account" type = "text"><br>
     	«Î ‰»Î√‹¬Î£∫<input name = "password" type = "password"><br>
     	<input type = "button" value = "µ«¬º" onClick = "validate()">
     </form>
+    </center>
   </body>
 </html>
