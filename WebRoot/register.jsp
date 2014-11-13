@@ -23,11 +23,18 @@
     		loginForm.submit();
     	}
     </script>
-    <form name = "loginForm" action = "successs.jsp" method = "post">
-    	请输入账号：<input name = "account" type = "text"><br>
-    	请输入密码：<input name = "password" type = "password"><br>
-    	再次输密码：<input name = "password1" type = "password"><br>
-    	<input type = "button" value = "注册" onClick = "validate()">
-    </form>
+    <br><br><br><br><br>
+    <%
+    	String show = (String)request.getParameter("show");
+ 		if(show.equals("1")) out.println("<script>alert('账号已经存在！')</script>");
+     %>
+     <div align="center">
+    	<form name = "loginForm" action = "/labf/servlet/register" method = "post">
+    		请输入账号：<input name = "account" type = "text"><br>
+    		请输入密码：<input name = "password" type = "password"><br>
+    		再次输密码：<input name = "password1" type = "password"><br>
+    		<input type = "button" value = "注册" onClick = "validate()">
+    	</form>
+    </div>
   </body>
 </html>

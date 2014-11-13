@@ -1,7 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GB18030"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
   
-  <body>
+  <body background="bg.jpg">
     <script type = "text/javascript">
     	function validate(){
     		if(loginForm.account.value==""){
@@ -15,10 +16,18 @@
     		loginForm.submit();
     	}
     </script>
-    <form name = "loginForm" action = "success1.jsp" method = "post">
-    	«Î ‰»Î’À∫≈£∫<input name = "account" type = "text"><br>
-    	«Î ‰»Î√‹¬Î£∫<input name = "password" type = "password"><br>
-    	<input type = "button" value = "µ«¬º" onClick = "validate()">
-    </form>
+    <br><br><br><br>
+    <%
+    	String show = (String)request.getParameter("show");
+ 		if(show.equals("1")) out.println("<script>alert('’À∫≈≤ª¥Ê‘⁄£°')</script>");
+ 		if(show.equals("2")) out.println("<script>alert('√‹¬Î¥ÌŒÛ£°')</script>");
+	%>
+    <div align="center">
+    	<form name = "loginForm" action = "/labf/servlet/login" method = "post">
+    		«Î ‰»Î’À∫≈£∫<input name = "account" type = "text"><br>
+    		«Î ‰»Î√‹¬Î£∫<input name = "password" type = "password"><br>
+    		<input type = "button" value = "µ«¬º" onClick = "validate()">
+    	</form>
+    </div>
   </body>
 </html>
