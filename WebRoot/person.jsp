@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.sql.*" pageEncoding="GB18030"%>
+<%@ page language="java" import="java.sql.*,java.util.*" pageEncoding="GB18030"%>
 <html>
 <head>
 
@@ -49,6 +49,27 @@
 					out.println("您的链接：" + url1);
 				} 
 			}
+			
+			
+			
+			
+			ArrayList tree = (ArrayList)session.getAttribute("tree");
+			out.println( "kh<BR>");
+			if(tree==null)
+			{
+				tree = new ArrayList();
+				session.setAttribute("tree",tree);
+				out.println("kong!!!!");
+			}
+			else
+			{
+				for(int i=0;i<tree.size();i++)
+				{
+					String node[]=(String[])tree.get(i);
+					out.println(node[0]+" "+node[1]+" "+node[2] + "<BR>");
+				}
+			}
+			
 		
   	  %>
   	  <input type="button" onclick="change()" value="查看"/>
