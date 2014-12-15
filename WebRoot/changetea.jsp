@@ -29,13 +29,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			if(rs.next())
 			{
 				String teacher = rs.getString("teacher");
+				int layer = rs.getInt("layer");
+				layer++;
 				if(teacher==null) teacher="/"+namet2;
 				else 	teacher+="/"+namet2;
 				out.println(teacher);
 				String sql1 = "update tree set teacher='"+teacher+"' where accountt='"+account+"' AND namet = '"+namet1+"'";	
 				stat.executeUpdate(sql1);
 				String student ="/"+namet1;	
-				String sql1t= "INSERT INTO tree(accountt,namet,workt,urlt,student) VALUES('"+ account +"','"+ namet2 +"','"+ workt +"','"+ url1 +"','"+ student +"')";
+				String sql1t= "INSERT INTO tree(accountt,namet,workt,urlt,student,layer) VALUES('"+ account +"','"+ namet2 +"','"+ workt +"','"+ url1 +"','"+ student +"','"+ layer +"')";
 				stat.executeUpdate(sql1t);
 			}
 			stat.close();

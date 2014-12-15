@@ -17,7 +17,7 @@
     		}
     		if(loginForm.password.value!=loginForm.password1.value)
     		{
-    			alert("2次密码不一致！"+loginForm.password.value+loginForm.password1.value);
+    			alert("2次密码不一致！");
     			return;
     		}
     		loginForm.submit();
