@@ -28,18 +28,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			if(rs.next())
 			{
 				String student = rs.getString("student");
+				int layer = rs.getInt("layer");
+				layer--;
 				if(student==null) student="/"+namet2;
 				else 	student+="/"+namet2;
 				out.println(student);
 				String sql1 = "update tree set student='"+student+"' where accountt='"+account+"' AND namet = '"+namet1+"'";	
 				stat.executeUpdate(sql1);
 				String teacher ="/"+namet1;	
-				String sql1t= "INSERT INTO tree(accountt,namet,workt,urlt,teacher) VALUES('"+ account +"','"+ namet2 +"','"+ workt +"','"+ url1 +"','"+ teacher +"')";
+				String sql1t= "INSERT INTO tree(accountt,namet,workt,urlt,teacher,layer) VALUES('"+ account +"','"+ namet2 +"','"+ workt +"','"+ url1 +"','"+ teacher +"','"+ layer +"')";
 				stat.executeUpdate(sql1t);
 			}
 			stat.close();
 			con.close();
      %>
+     <input type="button" onclick="change()" value="·µ»Ø"/>
+    	<script type = "text/javascript">
+		 	function change(){
+		 		var mm="tree.jsp";
+		 		window.location=mm;
+		 	}
+		 </script>
   </body>
 </html>
 
